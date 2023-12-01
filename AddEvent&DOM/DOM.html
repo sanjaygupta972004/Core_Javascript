@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom_1</title>
+</head>
+<body style="background-color: rgb(24, 22, 22);color: rgb(240, 248, 255);">
+    <div class="parent" style="display:grid;justify-content: center;align-items: center;margin: 30px;padding: 40px;gap: 10px;">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+        <div class="day">friday</div>
+    </div>
+</body>
+<script>
+    // SOME ACTIVITY ON DOM
+  const parent=document.querySelector(".parent")
+  console.log(parent);
+  console.log(parent.children);
+  console.log(parent.children[1].innerHTML);
+  // HERE ADDINFG STYLE PROPERTY USING DOM CONCEPT
+  parent.children[2].style.color="green";
+
+  for(let i=0;i< parent.children.length;i++){
+     console.log(parent.children[i].innerHTML)
+  };
+
+  const child=document.querySelector(".day");
+  console.log(child.innerHTML);
+  console.log(child.parentElement);
+  console.log(child.nextElementSibling.innerHTML)
+
+  console.log("Node",parent.childNodes)
+  console.log(parent.childNodes[3].innerHTML)
+</script>
+</html>

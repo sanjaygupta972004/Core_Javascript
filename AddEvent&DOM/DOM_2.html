@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create Element</title>
+</head>
+<body style="background-color: black; color: azure;text-align: center;"> 
+</body>
+ <script>
+    // creating a element using dom concept
+const Div=document.createElement("div");
+console.log(Div);
+Div.className="main";
+Div.id=Math.round(Math.random()*10+1);
+Div.style.backgroundColor="green";
+Div.style.padding="10px";
+Div.innerText="chai and code";
+Div.style.width="50%"
+document.body.appendChild(Div);
+ </script>
+</html>

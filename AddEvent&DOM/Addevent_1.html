@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+
+    <style>
+      #box1{
+        font-size: x-large ;
+        background-color: gray;
+        color: #fff;
+      }
+     button{
+        background-color: rgb(37, 35, 35);
+        color: #fff;
+        font-size: 20px;
+     } 
+     button:hover{
+       transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+     }
+     .container{
+        display: grid;
+        grid-template-rows: min-content;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: rgb(198, 152, 240);
+
+     }
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+      <h4 class="myh1">hello add event listener</h4>
+      <p id="box1">Lorem ipsum dolor sit amet.</p>
+      <button>Login</button>
+      <input type="text" id="name">
+
+    </div>
+
+    <script>
+        const container=document.getElementById("container");
+        const myh1= document.getElementsByClassName("box1")[0]
+        const button=document.querySelector("button")
+        const input= document.querySelector("input");
+
+        container.addEventListener("mouseover",(e)=>{
+          e.preventDefault()
+            container.className="container"  
+        });
+    
+        button.addEventListener("click",()=>{
+            button.style.backgroundColor="green"
+        });
+
+        input.addEventListener("change",(e)=>{
+         const value= e.target.value;
+         console.log(value)
+
+        })
+       
+    </script>
+
+</body>
+</html>

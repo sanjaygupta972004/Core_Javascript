@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+</head>
+<body>
+    <h3>Coder's Account</h3>
+    <form action="#" id="createAccount">
+        <input type="text" name="CustomerName" id="CustomerName" placeholder="Enter Your name">
+        <input type="number" name="intialBalance" id="intialBalance" placeholder="Enter intialBalance">
+        <button>createAccount</button>
+    </form>
+    <hr>
+    <form action="#" id="deposite">
+        <input type="number" name="accountnumber" id="accountnumber" placeholder="Enter Accountnumber">
+        <input type="number" name="amount" id="amount" placeholder="Enter Amount">
+        <button>deposite</button>
+    </form>
+    <script>
+// create a bankaccount_object  using construct funtion and add feature deposite some amount
+function Bankaccount(accountholder,balence=0){
+    this.accountholder=accountholder;
+    this.balence=balence;
+    this.accountnumber= Date.now();
+    this.deposite=(amount)=>{
+    this.balence+=amount;
+    };
+    this.withdraw=(amount)=>{
+    this.balence -= amount;
+    }
+};
+const accounts=[];
+const createAccount=document.querySelector("#createAccount");
+const CustomerName= document.querySelector("#CustomerName");
+const intialBalance=document.querySelector("#intialBalance");
+
+const deposite=document.querySelector("#deposite");
+const accountnumber= document.querySelector("#accountnumber");
+const amount=document.querySelector("#amount");
+
+createAccount.addEventListener("submit",(e)=>{
+e.preventDefault();
+const account=new Bankaccount(CustomerName.value,+intialBalance.value)
+accounts.push(account)
+console.log(accounts)
+CustomerName.value=""
+intialBalance.value=""
+});
+
+deposite.addEventListener("submit",(e)=>{
+e.preventDefault();
+ const account=accounts.find((account)=>account.accountnumber=+accountnumber.value);
+ account.deposite(+amount.value);
+ console.log(accounts)
+ amount.value="";
+ accountnumber.value=""
+})
+
+
+    </script>
+</body>
+</html>

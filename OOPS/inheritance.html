@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Bankaccount{
+    custemorName;
+    accountNumber;
+    balance;
+
+    constructor(custemorName,balance=0){
+        this.custemorName=custemorName;
+        this.accountNumber=Date.now();
+        this.balance=balance;
+    };
+
+    deposite(amount){
+        this.balance += amount;
+    };
+     withdraw(amount){
+        this.balance -= amount;
+     }
+
+};
+
+class SavingAccount extends Bankaccount{
+    limitbalance=10000;
+    constructor(custemorName,balance=0){
+        super(custemorName,balance)
+    }
+
+    takebusinessloan(amount){
+   console.log('your business loan is : '+amount)
+    }
+}
+
+const yashSavingAccount= new SavingAccount('yash d',1000)
+yashSavingAccount.deposite(5000);
+yashSavingAccount.withdraw(2004);
+yashSavingAccount.takebusinessloan(12222)
+console.log(yashSavingAccount)
+</script>
+</html>
